@@ -18,6 +18,7 @@ import com.erp.test.service.impl.GradeServiceImpl;
 public class GradeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private GradeService gs = new GradeServiceImpl();
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
 		if("/grade/grade-list".equals(uri)) {
