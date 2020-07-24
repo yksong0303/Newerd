@@ -11,6 +11,7 @@ import java.util.Map;
 
 import com.erp.test.common.Conn;
 import com.erp.test.dao.GradeDAO;
+import com.erp.test.vo.GradeVO;
 
 public class GradeDAOImpl implements GradeDAO {
 
@@ -122,6 +123,31 @@ public class GradeDAOImpl implements GradeDAO {
 				g.put("grd_no", rs.getInt("grd_no"));
 				g.put("grd_name", rs.getString("grd_name"));
 				g.put("grd_desc", rs.getString("grd_desc"));
+				gradeList.add(g);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			Conn.close(rs,ps,con);
+		}
+		return gradeList;
+	}
+	
+	public List<GradeVO> selectGradeList(GradeVO grade) {
+		List<GradeVO> gradeList = new ArrayList<>();
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			con = Conn.open();
+			String sql = "select * from grade";
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				GradeVO g = new GradeVO();
+				g.setGrdNo(rs.getInt("grd_no"));
+				g.setGrdName(rs.getString("grd_name"));
+				g.setGrdDesc(rs.getString("grd_desc"));
 				gradeList.add(g);
 			}
 		}catch(SQLException e) {
