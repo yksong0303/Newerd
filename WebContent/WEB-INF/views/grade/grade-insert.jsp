@@ -10,10 +10,6 @@
 <form method="post" action="/grade/grade-insert" id="frm">
 	<table border="1">
 		<tr>
-			<th>직급번호</th>
-			<th><input type="text" name="grd_no" ></th>
-		</tr>
-		<tr>
 			<th>직급</th>
 			<th><input type="text" name="grd_name" ></th>
 		</tr>

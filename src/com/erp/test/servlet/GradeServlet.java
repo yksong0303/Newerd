@@ -52,7 +52,6 @@ public class GradeServlet extends HttpServlet {
 			request.setAttribute("rMap",rMap);
 		}else if("/grade/grade-insert".equals(uri)) {
 			Map<String,Object> grade = new HashMap<>();
-			grade.put("grd_no", request.getParameter("grd_no"));
 			grade.put("grd_name", request.getParameter("grd_name"));
 			grade.put("grd_desc", request.getParameter("grd_desc"));
 			Map<String,Object> rMap = gs.insertGrade(grade);
