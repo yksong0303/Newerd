@@ -22,7 +22,7 @@ public class GradeDAOImpl implements GradeDAO {
 		int result = 0;
 		try {
 			con = Conn.open();
-			String sql = "insert into grade values(seq_grd_no.nextval,?,?)";
+			String sql = "insert into grade values((select max(grd_no)+1 from grade),?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setObject(1,grade.get("grd_name"));
 			ps.setObject(2,grade.get("grd_desc"));

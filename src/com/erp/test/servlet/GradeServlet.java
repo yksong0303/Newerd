@@ -34,8 +34,41 @@ public class GradeServlet extends HttpServlet {
 		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String uri = request.getRequestURI();
+		if("/grade/grade-update".equals(uri)) {
+			Map<String,Object> grade = new HashMap<>();
+			grade.put("grd_no", request.getParameter("grd_no"));
+			grade.put("grd_name", request.getParameter("grd_name"));
+			grade.put("grd_desc", request.getParameter("grd_desc"));
+			Map<String,Object> rMap = gs.updateGrade(grade);
+			rMap.put("url", "/grade/grade-list");
+			request.setAttribute("rMap",rMap);
+		}else if("/grade/grade-delete".equals(uri)) {
+			Map<String,Object> grade = new HashMap<>();
+			grade.put("grd_no", request.getParameter("grd_no"));
+			Map<String,Object> rMap = gs.deleteGrade(grade);
+			rMap.put("url", "/grade/grade-list");
+			request.setAttribute("rMap",rMap);
+		}else if("/grade/grade-insert".equals(uri)) {
+			Map<String,Object> grade = new HashMap<>();
+			grade.put("grd_no", request.getParameter("grd_no"));
+			grade.put("grd_name", request.getParameter("grd_name"));
+			grade.put("grd_desc", request.getParameter("grd_desc"));
+			Map<String,Object> rMap = gs.insertGrade(grade);
+			rMap.put("url", "/grade/grade-list");
+			request.setAttribute("rMap",rMap);
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("/views/common/msg");
+		rd.forward(request, response);
 	}
 
 }
+
+
+
+
+
+
+
+

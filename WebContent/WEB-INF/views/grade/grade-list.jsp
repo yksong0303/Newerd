@@ -26,6 +26,7 @@
 		</tr>
 	</c:forEach>	
 </table>
+<a href="/views/grade/grade-insert"><button>직급추가</button></a>
 <script>
 function goView(grd_no){
 	location.href='/grade/grade-view?grd_no=' + grd_no;
