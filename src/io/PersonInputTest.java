@@ -14,8 +14,8 @@ import java.util.Map;
 
 public class PersonInputTest {
 
+	
 	public static void main(String[] args) {
-		
 		List<Map<String,String>>personList = new ArrayList<>();
 		List<String> keyList = new ArrayList<>();
 		File f = new File("c:\\person.txt");

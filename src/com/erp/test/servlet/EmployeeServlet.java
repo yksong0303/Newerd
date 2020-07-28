@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.erp.test.service.EmployeeService;
+import com.erp.test.service.GradeService;
 import com.erp.test.service.impl.EmployeeServiceImpl;
 import com.erp.test.service.impl.GradeServiceImpl;
 
 public class EmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EmployeeService es = new EmployeeServiceImpl();	
-	private GradeServiceImpl gs = new GradeServiceImpl();
+	private GradeService gs = new GradeServiceImpl();
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri = request.getRequestURI();
