@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Conn {
+public class Conn { 
 	static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -17,9 +17,9 @@ public class Conn {
 	
 	public static Connection open() {
 		try {
-			Connection con =  DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe","c##test","test");
+			Connection con =  DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe","test","test");
 			con.setAutoCommit(false);
-			return con;
+			return con; 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -61,6 +61,9 @@ public class Conn {
 		close(rs);
 		close(ps);
 		close(con);
+	}
+	public static void main(String[] args) {
+		open();
 	}
 }
 
