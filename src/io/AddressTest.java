@@ -89,6 +89,11 @@ public class AddressTest {
 		AddressTest at = new AddressTest();
 		at.insertAddress(f);
 	}
+	
+	public int test() {
+		int v_cnt = 0;
+		return 1;
+	}
 }
 
 

@@ -32,6 +32,20 @@ public class BatchTest {
 	}
 }
 
+/*
+ * select sido,cnt from 
+	(select sido,count(1) as cnt 
+	from address
+	group by sido)
+where cnt = (select max(cnt) from 
+	(select sido,count(1) as cnt 
+	from address
+	group by sido));
+ * 
+ */
+
+
+
 
 
 
