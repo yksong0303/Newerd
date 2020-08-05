@@ -8,6 +8,9 @@ import com.erp.test.common.Conn;
 
 public class BatchTest {
 	public static void main(String[] args) {
+		if("1"=="2") {
+			
+		}
 		Connection con = Conn.open();
 		long sTime = System.currentTimeMillis();
 		String sql = "insert into batch_test values(?,?)";
@@ -30,6 +33,7 @@ public class BatchTest {
 		long eTime = System.currentTimeMillis();
 		System.out.println("실행 시간 : " + (eTime-sTime));
 	}
+	
 }
 
 /*
