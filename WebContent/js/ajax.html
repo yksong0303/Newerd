@@ -6,9 +6,21 @@
 </head>
 <body>
 <script>
-var str = "[1,2,3]";
-var nums = JSON.parse(str);
-console.log(nums);
+function Person(){
+	this.name='동동이';
+	var age = 10;
+	this.getAge= function(){
+		return age;
+	}
+	this.getAge=function(name){
+		return this.name+age;
+	}
+
+}
+
+var p = new Person();
+alert(p.name);
+alert(p.getAge());
 </script>
 </body>
 </html>
