@@ -39,7 +39,7 @@ div.gugun{
 //ajax
 function getAjax(){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET','/ajax?sido=서울&gugun=강서구');
+	xhr.open('GET','/ajax');
 	xhr.onreadystatechange = function(){
 		if(xhr.readyState==4){
 			var sidos = JSON.parse(xhr.responseText);

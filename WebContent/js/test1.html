@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+	border:1px solid blue;
+	text-align:center;
+	cursor:pointer;
+	width:100px;
+	height:100px;
+}
+td:hover{
+	background-color:black;
+	color:white;
+	font-weight:bold;
+}
+</style>
+</head>
+<body>
+<div>네모상자</div>
+<button onclick="slideUp()">줄어라!</button>
+<script>
+function slideUp(){
+	var sequre = document.querySelector('div');
+	var height = sequre.offsetHeight;
+	setInterval(function(){
+		sequre.style.height = (height--) + 'px';
+	},20);
+}
+</script>
+</body>
+</html>
+
+
+
